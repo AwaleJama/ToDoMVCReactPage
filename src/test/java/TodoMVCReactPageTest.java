@@ -50,7 +50,7 @@ public class TodoMVCReactPageTest {
 
     @Test
     // TC-5
-    // & symbol is a bug??
+    // & symbol is a bug
     public void shouldAddSpecialCharactersToTheToDoList() {
         TodoMVCReactPage searchPage = new TodoMVCReactPage(driver);
         searchPage.navigate();
@@ -81,10 +81,11 @@ public class TodoMVCReactPageTest {
 
     @Test
     // TC-6
+    // Had to use Basic Multilingual Plane (BMP) safe keys, failed when using non-BMP emojis
     public void shouldAddEmojisToTheToDoList() {
         TodoMVCReactPage searchPage = new TodoMVCReactPage(driver);
         searchPage.navigate();
-        searchPage.inputToDo("🙂");
-        assertEquals(searchPage.getFirstToDoItem(), "🙂");
+        searchPage.inputToDo("☺☺");
+        assertEquals(searchPage.getFirstToDoItem(), "☺☺");
     }
 }
