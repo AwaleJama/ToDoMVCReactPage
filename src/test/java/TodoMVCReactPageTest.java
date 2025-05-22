@@ -28,35 +28,12 @@ public class TodoMVCReactPageTest {
     }
 
     @Test
-    public void shouldAddMultipleItemsToTheToDoList() {
-        TodoMVCReactPage searchPage = new TodoMVCReactPage(driver);
-        searchPage.navigate();
-        searchPage.inputToDo("Buy Sweets");
-        searchPage.inputToDo("Walk the dog");
-        searchPage.inputToDo("Talk to Gary");
-        searchPage.inputToDo("Return Next items");
-        searchPage.inputToDo("Read a book");
-        assertEquals(searchPage.getLengthOfTodos(), 5);
-    }
-
-    @Test
     // TC-2
     public void shouldAddEmptyItemToTheToDoList() {
         TodoMVCReactPage searchPage = new TodoMVCReactPage(driver);
         searchPage.navigate();
         searchPage.inputToDo("");
         assertEquals(searchPage.getLengthOfTodos(), 0);
-    }
-
-    @Test
-    // TC-5
-    // & symbol is a bug
-    public void shouldAddSpecialCharactersToTheToDoList() {
-        TodoMVCReactPage searchPage = new TodoMVCReactPage(driver);
-        searchPage.navigate();
-        searchPage.inputToDo("@£%*!^?~");
-        assertEquals(searchPage.getFirstToDoItem(), "@£%*!^?~");
-
     }
 
     @Test
@@ -80,6 +57,17 @@ public class TodoMVCReactPageTest {
     }
 
     @Test
+    // TC-5
+    // & symbol is a bug
+    public void shouldAddSpecialCharactersToTheToDoList() {
+        TodoMVCReactPage searchPage = new TodoMVCReactPage(driver);
+        searchPage.navigate();
+        searchPage.inputToDo("@£%*!^?~");
+        assertEquals(searchPage.getFirstToDoItem(), "@£%*!^?~");
+
+    }
+
+    @Test
     // TC-6
     // Had to use Basic Multilingual Plane (BMP) safe keys, failed when using non-BMP emojis
     public void shouldAddEmojisToTheToDoList() {
@@ -87,5 +75,18 @@ public class TodoMVCReactPageTest {
         searchPage.navigate();
         searchPage.inputToDo("☺☺");
         assertEquals(searchPage.getFirstToDoItem(), "☺☺");
+    }
+
+    @Test
+    // TC-7
+    public void shouldAddMultipleItemsToTheToDoList() {
+        TodoMVCReactPage searchPage = new TodoMVCReactPage(driver);
+        searchPage.navigate();
+        searchPage.inputToDo("Buy Sweets");
+        searchPage.inputToDo("Eat Sweets");
+        searchPage.inputToDo("Throw away wrapper");
+        searchPage.inputToDo("Remove wrapper from Food bin");
+        searchPage.inputToDo("Throw wrapper into Recycling bin");
+        assertEquals(searchPage.getLengthOfTodos(), 5);
     }
 }

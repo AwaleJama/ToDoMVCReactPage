@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TodoMVCReactPageTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-05-22T11:18:35" hostname="MASTUDENT-Awale-Jama-FVFLF1Z41WFY.local" time="0.902">
+<testsuite name="TodoMVCReactPageTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-05-22T11:36:25" hostname="MASTUDENT-Awale-Jama-FVFLF1Z41WFY.local" time="0.771">
   <properties/>
-  <testcase name="shouldAddOneCharacterToTheToDoList()" classname="TodoMVCReactPageTest" time="0.392"/>
-  <testcase name="shouldAddTwoCharactersToTheToDoList()" classname="TodoMVCReactPageTest" time="0.099"/>
-  <testcase name="shouldAddItemToTheToDoList()" classname="TodoMVCReactPageTest" time="0.076"/>
-  <testcase name="shouldAddEmojisToTheToDoList()" classname="TodoMVCReactPageTest" time="0.062"/>
-  <testcase name="shouldAddEmptyItemToTheToDoList()" classname="TodoMVCReactPageTest" time="0.045"/>
-  <testcase name="shouldAddMultipleItemsToTheToDoList()" classname="TodoMVCReactPageTest" time="0.168"/>
-  <testcase name="shouldAddSpecialCharactersToTheToDoList()" classname="TodoMVCReactPageTest" time="0.059"/>
+  <testcase name="shouldAddMultipleItemsToTheToDoList()" classname="TodoMVCReactPageTest" time="0.771"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[May 22, 2025 12:18:35 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  <system-err><![CDATA[May 22, 2025 12:36:25 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 136, returning the closest version; found: 132; Please update to a Selenium version that supports CDP version 136
 ]]></system-err>
 </testsuite>
