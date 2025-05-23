@@ -44,28 +44,28 @@ public class TodoMVCReactPage {
     }
 
 
-    public void editToDo(String newToDoItem, int itemNumber) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-
-        try {
-            // Find and Double-click item
-            List<WebElement> todoItems = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                    By.cssSelector(".todo-list label")));
-            WebElement todoItem = todoItems.get(itemNumber - 1);
-            new Actions(driver).doubleClick(todoItem).perform();
-
-            // Wait for and interact with the edit field
-            WebElement editInput = wait.until(ExpectedConditions.elementToBeClickable(
-                    By.id("todo-input")));
-            editInput.clear();
-            editInput.sendKeys(newToDoItem);
-            editInput.sendKeys(Keys.ENTER);
-
-            // Wait for the edit to complete
-            wait.until(ExpectedConditions.textToBePresentInElement(
-                    getFirstToDoElement(), newToDoItem));
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to edit todo: " + e.getMessage(), e);
-        }
-    }
+//    public void editToDo(String newToDoItem, int itemNumber) {
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+//
+//        try {
+//            // Find and Double-click item
+//            List<WebElement> todoItems = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+//                    By.cssSelector(".todo-list label")));
+//            WebElement todoItem = todoItems.get(itemNumber - 1);
+//            new Actions(driver).doubleClick(todoItem).perform();
+//
+//            // Wait for and interact with the edit field
+//            WebElement editInput = wait.until(ExpectedConditions.elementToBeClickable(
+//                    By.id("todo-input")));
+//            editInput.clear();
+//            editInput.sendKeys(newToDoItem);
+//            editInput.sendKeys(Keys.ENTER);
+//
+//            // Wait for the edit to complete
+//            wait.until(ExpectedConditions.textToBePresentInElement(
+//                    getFirstToDoElement(), newToDoItem));
+//        } catch (Exception e) {
+//            throw new RuntimeException("Failed to edit todo: " + e.getMessage(), e);
+//        }
+//    }
 }

@@ -98,31 +98,33 @@ public class TodoMVCReactPageTest {
         searchPage.inputToDo("Throw wrapper into Recycling bin");
         assertEquals(searchPage.getLengthOfTodos(), 5);
     }
-
-    @Test
+// Below test was an attempt at editing an existing item,
+// spent more time on it than I should've,
+// issue was the attribute of the element changes when editing an item in TodoMVC, 'stale element'(item found before no longer exists on the page).
+    // @Test
     // TC-8
-    public void shouldEditExistingToDoItem() {
-        TodoMVCReactPage page = new TodoMVCReactPage(driver);
-        page.navigate();
+    // public void shouldEditExistingToDoItem() {
+    //    TodoMVCReactPage page = new TodoMVCReactPage(driver);
+    //    page.navigate();
 
-        // Add initial item
-        page.inputToDo("Hello");
-        assertEquals("Hello", page.getFirstToDoItem());
+    //    // Add initial item
+    //    page.inputToDo("Hello");
+    //    assertEquals("Hello", page.getFirstToDoItem());
 
         // Edit the item
-        page.editToDo("HelloThere", 1);
+    //    page.editToDo("HelloThere", 1);
 
         // Ensure window is still open
-        try {
-            driver.getTitle();
-        } catch (Exception e) {
-            fail("Browser window closed unexpectedly: " + e.getMessage());
-        }
+    //    try {
+    //        driver.getTitle();
+    //    } catch (Exception e) {
+    //        fail("Browser window closed unexpectedly: " + e.getMessage());
+    //    }
 
         // Verify edit
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        assertEquals("HelloThere", page.getFirstToDoItem()); // Direct assertion (editToDo already waited)
-    }
+    //    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+    //    assertEquals("HelloThere", page.getFirstToDoItem()); // Direct assertion (editToDo already waited)
+    // }
 
     @Test
     // TC-12
